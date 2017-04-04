@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
-  app: path.join(__dirname, 'app'),
+  app: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
 };
 
@@ -12,11 +12,12 @@ const commonConfig = {
   },
   output: {
     path: PATHS.build,
-    filename: "[name].js",
+    filename: "bundle.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React Template',
+      template: 'src/assets/test.html'
     }),
   ],
 };
